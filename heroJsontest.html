@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src = "data.js"></script>
+
+
+	</head>
+	<body>
+	<script>
+		
+		var myH = document.createElement('p');
+		myH.innerHTML = data['squadName'];
+
+		for(var i = 0; i < data.members.length; i++) {
+
+			myH.innerHTML += JSON.stringify(data.members[i].name);
+
+			}
+
+		document.getElementsByTagName('body')[0].appendChild(myH);
+
+
+	</script>
+	</body>
+	
+</html>

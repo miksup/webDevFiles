@@ -1,0 +1,6 @@
+Window.event.clientY;
+Window.event.altKey;
+
+x.style.top = 50;
+
+<input id="x" style="position:absolute; top:50;left:100;" />

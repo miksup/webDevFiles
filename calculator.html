@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+		function addition() {
+				var z = 0;
+				var x = document.getElementById("int1").value;
+				var y = document.getElementById("int2").value;
+				
+				if (!x || !y) {
+				alert("One or more values missing or invalid, can not compute!");
+				} else {
+				z = parseInt(x) + parseInt(y);
+				document.getElementById("result").value = z;	
+				}
+			}
+		</script>
+
+		<script>
+		function subtraction() {
+				var z = 0;
+				var x = document.getElementById("int1").value;
+				var y = document.getElementById("int2").value;
+				
+				if (!x || !y) {
+				alert("One or more values missing or invalid, can not compute!");
+				} else {
+				z = parseInt(x) - parseInt(y);
+				document.getElementById("result").value = z;	
+				}
+			}
+		</script>
+
+		<script>
+		function multiplication() {
+				var z = 0;
+				var x = document.getElementById("int1").value;
+				var y = document.getElementById("int2").value;
+				
+				if (!x || !y) {
+				alert("One or more values missing or invalid, can not compute!");
+				} else {
+				z = parseInt(x) * parseInt(y);
+				document.getElementById("result").value = z;
+				}	
+			}
+		</script>
+
+		<script>
+		function division() {
+
+				var z = 0;
+				var x = document.getElementById("int1").value;
+				var y = document.getElementById("int2").value;
+				
+				if (!x || !y) {
+				alert("One or more values missing or invalid, can not compute!");
+				} else {
+				z = parseInt(x) / parseInt(y);
+				document.getElementById("result").value = z;
+				}	
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<form name="inputs">
+			<input id="int1" type="number"/>
+			<input id="int2" type="number"/>
+		</br>
+			ADD<input id="add" type="button" onclick="addition()"/>
+			MINUS<input id="sub" type="button" onclick="subtraction()"/>
+			MULTIPLY<input id="mul" type="button" onclick="multiplication()"/>
+			DIVIDE<input id="div" type="button" onclick="division()"/>
+		</br>
+			<input id="result" type="number" readonly/>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<script>
+//			var x = 2;
+//			function doub(input) {
+//				alert(x*2);
+//			};
+//			doub(2);
+
+//			function sum(in1,in2,in3) {
+//				console.log(in1+in2+in3)
+//			};
+//			sum(x,4,3);
+
+			var me = {
+				name: "bruce wayne",
+				age:41,
+				alias: "batman"
+			};
+
+			function outChar(){
+				console.log(me);
+				document.getElementById("nameField").value = me.name;
+				document.getElementById("ageField").value = me.age;
+				document.getElementById("aliasField").value = me.alias;
+			}
+
+			function ageUp() {
+			me.age++;
+			console.log(me.age);
+			outChar();
+			}
+
+			function ageDown() {
+			me.age--;
+			console.log(me.age);
+			outChar();
+			}
+			
+			function newName() {
+				var name = document.getElementById("myName").value;
+				me.name = name.toUpperCase();
+				outChar();
+			}
+
+			function newAlias() {
+				var alias = document.getElementById("myAlias").value;
+				me.alias = alias;
+				outChar();
+			}
+
+			
+	
+			function babyMaker() {
+				
+				var name = document.getElementById("myName").value;
+				var age = document.getElementById("myAge").value;
+				var alias = document.getElementById("myAlias").value;
+						
+				me.name = name;
+				me.age = age;
+				me.alias = alias;
+
+				outChar();
+			}
+
+		</script>
+
+	</head>
+
+	<body>
+
+<form name="new character">
+		<input id="myName" type="text" placeholder="your name" alt="Enter Name: " onfocus="this.value=''"/>
+		<input id="myAge" type="number" placeholder="your age" alt="Enter Age: " />
+		<input id="myAlias" type="text" placeholder="your alias" alt="Enter Alias: " />
+		<input type="button" id="giveit" onclick="babyMaker()">Make Character</button>
+</form>	
+
+
+<div>
+		<input type="button" onclick="ageUp()">Age +</button>
+		<input type="button" onclick="ageDown()">Age -</button>
+		<input type="button" onclick="newName()">Edit Name</button>
+		<input type="button" onclick="newAlias()">Edit Alias</button>
+</div>	
+
+<div>
+		Name<input id="nameField"/>Age<input id="ageField" readonly/>Alias<input id="aliasField" readonly/>
+		
+</div>
+		<script> outChar();
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE>
+<html>
+	<head>
+		
+		<script>
+		var z = 0; 
+		var requestURL = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json';
+		var request = new XMLHttpRequest();
+
+		request.open('GET', requestURL);
+		request.responseType = 'json';
+		request.send();
+		</script>
+		
+		<script>
+		function next() {
+		z++;
+		request.onload = function() {
+
+		var heroCollection = request.response;
+		var myH = document.createElement('p');
+		
+		myH.innerHTML = JSON.stringify(heroCollection.members[z].name);
+			
+		document.getElementsById("res").value = myH;
+
+			}
+		}
+		</script>
+
+		<script>
+		function back() {
+		z--;
+		request.onload = function() {
+
+		var heroCollection = request.response;
+
+		var myH = JSON.stringify(heroCollection.members[z].name);
+
+		document.getElementsById("res").value = myH;
+
+			}
+		}
+		</script>
+	</head>
+
+	<body>
+		<div id="theDiv">
+			<button id="back" onclick="back()"><</button>
+			<button id="next" onclick="next()"/>></button>
+			<input id="res" type="text" readonly/>
+		</div>
+	</body>
+</html>

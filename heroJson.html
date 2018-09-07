@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script>
+		var requestURL = '';
+		var request = new XMLHttpRequest();
+
+		request.open('GET', requestURL);
+		request.responseType = 'json';
+		request.send();
+
+		request.onload = function() {
+
+		var heroCollection = request.response;
+		
+		var myH = document.createElement('p');
+		myH.innerHTML = heroCollection['squadName'];
+
+		for(var i = 0; i < heroCollection.members.length; i++) {
+
+			myH.innerHTML += JSON.stringify(heroCollection.members[i].name);
+
+			}
+
+		document.getElementsByTagName('body')[0].appendChild(myH);
+
+		}
+
+	</script>
+
+	</head>
+	<body>
+
+	</body>
+	
+</html>
